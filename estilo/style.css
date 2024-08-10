@@ -1,0 +1,255 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kalnia+Glaze:wght@100..700&family=Playwrite+CL:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@font-face {
+    font-family:'Android';
+    src: url('../fontes/idroid.otf') format('opentype'); /* você tem que refazer o caminho para chegar lá a apartir de onde está, no caso. Teria que voltar uma pasta (..) , abrir (/) fontes e abrir (/) a fonte */
+    font-weight: normal;
+}
+
+
+/*
+#c5ebd6
+#83e1ad
+#3ddc84
+#2fa866        -- Deixar a paleta de cores aqui ajuda a copiar e usar
+#1a5c37
+#063d1e
+*/
+
+:root {    /* É uma VARIÁVEL global que se aplica a todo o documento */
+    --cor0:#c5ebd6;
+    --cor1: #83e183ad;
+    --cor02: #3ddc84;
+    --cor03: #2fa866;
+    --cor04: #1a5c37;
+    --cor05: #063d1e;
+
+    --fonte-padrão: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte-android: 'Android', cursive;
+
+}
+
+/* '*' SELECIONA TODAS as tags html */ 
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Quando você abre a página usando o devtools, aparece no canto superior direito a dimensão, em pixel.
+
+    Daí, você tem que analisar em quais tamanhos sua página fica bem. Ex.: até 400px, fica legal, menor do que isso fica pequeno demais, daí, vc trava em 400px. Trava também um máximo (ex.: 800px), não deixando passasr disso.
+
+ */
+
+
+body {
+    
+ background-color: var(--cor0);
+ font-family: var(--fonte-padrão);
+ text-align: center;
+ 
+}
+
+/* Como tiramos a margem e o padding nas configurações globais, temos que colcoar agora um padding que os p geralmente têm */
+
+main  p {
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 1.1em;
+    line-height: 1.2em;
+    padding: 2px 6px;
+
+}
+
+main strong {
+    color: var(--cor04);
+    font-weight: bold;
+    
+}
+
+main a {
+    text-decoration: none;
+    color: var(--cor04);
+    font-weight: bold;
+    background-color: var(--cor1) ;
+    padding: 2px 6px;
+
+}
+
+
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor03), var(--cor05) );
+    min-height: 150px;
+    padding-top: 30px;
+    
+}
+header > p {
+    font-family: var(--fonte-padrão);
+    font-size: 1.2em;
+    color: white;
+    margin: auto;
+    max-width: 500px;
+    padding: 0px 10px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    
+}
+
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    margin-bottom: 20px;
+    font-size: 3em;
+    display: inline-flex;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+    font-weight: normal;
+    font-size: 2em;
+
+}
+
+header > h2 {
+    font-weight: normal;
+}
+
+
+
+nav {
+    background-color: var(--cor05);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.518);
+    text-align: left;
+    
+}
+
+nav > a {
+    color: white;
+    padding: 10px;
+        text-decoration: none;
+}
+
+nav > a:hover {
+    background-color: var(--cor03);
+    background-image: linear-gradient(to top, var(--cor02),var(--cor05) );
+    border-radius: 5px;
+    transition-duration: 0.3s;
+    
+}
+
+
+main {
+    min-width: 300px;
+    max-width: 1000px;
+    padding: 20px;
+    margin: auto;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.605);
+    margin-bottom: 30px;
+    /* Se colocar o border-radius normal, ele só arrendonda o canto superior esquerdo e o canto inferior direito, para customizar totalmente, tem que fazer um por um */
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: var(--cor04);
+}
+
+main h1 {
+    color: var(--cor05);
+    font-family: var(--fonte-android);
+}
+
+main h2 {
+    font-family: var(--fonte-android);
+    color: var(--cor04);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    text-indent: 10px;
+    text-align: justify;
+}
+
+main img { /* as imagens estão tendo uma configuração independente do conteúdo. O problema em definir isso para qualquer imagem do main, é que as imagens pequenas podem ficar pixeladas e as grandes podem ficar pequenas demais */
+    width: 100%;
+}
+
+main img.pequena {
+    max-width: 350px;
+    display: block; /* Isso porque imagem é por padrão inline, tem que transformar em block para poder aplicar a margin auto */
+    margin: auto;
+}
+
+aside {
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+    padding: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.333);
+
+
+}
+
+aside > ul {
+    /* list-style-type: '\27114\00A0\00A0';  Não é compatível com todo tipo de navegador */
+    list-style-position: inside; /* faz o símbolo ficar do lado de dentro da caixa */
+    columns: 2;
+   
+}
+
+aside > h3 {
+    background-color: var(--cor04);
+    color: white;
+    padding: 5px;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+a.externo::after {
+    content: '\00A0\1F517';
+
+}
+
+div.video {
+    background-color: var(--cor05);
+    margin-bottom: 30px;
+    margin: 0px, -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 58.5%;
+    position: relative;
+
+}
+
+div.video > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+footer {
+    background-color: var(--cor05);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+footer  a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor1);
+}
